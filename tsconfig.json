@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "jsx": "react-jsx",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "strict": false,
+        "noEmit": true,
+        "allowJs": true,
+        "noImplicitAny": false,
+        "noImplicitThis": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "strictNullChecks": false,
+        "downlevelIteration": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "strictBindCallApply": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "paths": {
+            "@shared/*": ["src/shared/*"],
+            "@modules/*": ["src/modules/*"],
+            "@core/*": ["src/core/*"]
+        }
+    },
+    "include": ["src", "src/images.d.ts"],
+    "exclude": ["build", "node_modules"]
+}

@@ -1,0 +1,52 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier", "import", "react-hooks", "autofix"],
+  "extends": ["plugin:prettier/recommended", "prettier", "plugin:import/typescript"],
+  "ignorePatterns": ["**.spec.*", "**.test.*"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["../../"]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["react"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@core/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@modules/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@shared/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "*.styles",
+            "group": "index",
+            "patternOptions": { "matchBase": true },
+            "position": "after"
+          }
+        ],
+
+        "groups": ["builtin", "external", "internal", "sibling", "object"]
+      }
+    ]
+  }
+}
