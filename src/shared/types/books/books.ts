@@ -1,3 +1,3 @@
 export interface IBooksService {
-  getBooks: () => Promise<Record<string, string>>;
+  getTrendingBooks: () => Promise<Record<string, string>>;
 }

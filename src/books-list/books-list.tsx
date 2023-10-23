@@ -1,15 +1,11 @@
-import { useEffect } from 'react';
+import { Box } from '@mui/material';
 
-import { BooksService } from 'src/shared/services/books/books';
+import { TrendingBooks } from './components/trending-books';
 
 export const BooksList: React.FC = () => {
-  const booksService = new BooksService();
-  let books;
-
-  useEffect(() => {
-    books = booksService.getBooks();
-  }, []);
-  console.log(books);
-
-  return <div></div>;
+  return (
+    <Box sx={{ height: '100%' }}>
+      <TrendingBooks />
+    </Box>
+  );
 };

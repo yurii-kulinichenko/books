@@ -2,13 +2,11 @@ import axios from 'axios';
 
 import { IBooksService } from '@shared/types/books/books';
 
-axios.defaults.baseURL = 'https://www.zohoapis.com/books/v3';
-axios.defaults.headers['X-API-Key'] = 'AIzaSyDZIIcpFd35OpdPJ5bxqgoG2je2DlP6pQ4';
-const API_KEY = 'AIzaSyDt2lxB25FsUwirAsFzml67nog9_-Pvee0';
+axios.defaults.baseURL = 'https://openlibrary.org/';
 
 export class BooksService implements IBooksService {
-  async getBooks() {
-    const { data } = await axios.get('/invoices');
+  async getTrendingBooks() {
+    const { data } = await axios.get('/trending/daily.json');
     return data;
   }
 }
